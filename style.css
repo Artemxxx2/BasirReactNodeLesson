@@ -1,0 +1,61 @@
+/*Common*/
+html{
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+}
+a:hover{
+    color: yellow;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    font-size: 1.6rem;
+}
+/* Header */
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'main'
+    'footer'
+    ;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+}
+header{
+    grid-area: header;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.amazona {
+    font-size: 40px;
+    }
+ .amazona:hover {
+    color: white;
+  }
+/* Main */
+main{
+    grid-area: main;
+}
+/* Footer */
+footer{
+    grid-area: footer;
+    background-color: black;
+    color: white;
+    
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
