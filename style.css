@@ -1,4 +1,7 @@
 /*Common*/
+h2{
+    color: orange;
+}
 html{
     font-size: 1rem;
     box-sizing: border-box;
@@ -32,8 +35,6 @@ body{
 header{
     grid-area: header;
     background-color: black;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 .amazona {
@@ -42,9 +43,35 @@ header{
  .amazona:hover {
     color: white;
   }
+.compressed{
+    height: 680px;
+    width: 300px;
+}
+.center {
+    display: flex;
+    align-items: center;
+}
 /* Main */
 main{
     grid-area: main;
+}
+.card {
+    border: 1px solid black;
+    margin: 10px 0 0 10px;
+}
+.compressed {
+}
+.card-body {
+    background-color:rgb(134, 207, 121)
+}
+.rating {
+}
+.fa {
+}
+.fa-star {
+    color: orange;
+}
+.price {
 }
 /* Footer */
 footer{
@@ -54,8 +81,6 @@ footer{
     
 }
 .footer{
-    display: flex;
     justify-content: center;
-    align-items: center;
 }
 
