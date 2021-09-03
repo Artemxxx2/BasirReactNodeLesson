@@ -1,4 +1,7 @@
 /*Common*/
+.review{
+  color: black;
+}
 img{
   height: 300px;
   width: 300px;
@@ -27,7 +30,13 @@ body{
   height: 100vh;
   font-size: 1.6rem;
 }
-/* Header */
+.fa-star-half-o{
+ color: orange;
+}
+.fa-star-o {
+  color: orange;
+}
+ /* Header */
 .grid-container {
   display: grid;
   grid-template-areas: 
