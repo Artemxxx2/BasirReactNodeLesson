@@ -33,6 +33,7 @@ function App() {
       </div>
     </header>
     <main>
+      <div></div>
   {productData}
     </main>
     <footer className="footer center">All rights reserved</footer>

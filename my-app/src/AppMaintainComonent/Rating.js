@@ -48,6 +48,7 @@ let Rating = (props) => {
               : "fa fa-star-o"
           }
         ></i>
+        <div></div>
       </span>
       <span className='review'>{props.reviews} reviews</span>
     </div>
