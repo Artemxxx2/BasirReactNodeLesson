@@ -1,10 +1,10 @@
-
+import {BrowserRouter,Route} from 'react-router-dom' 
 import './App.css';
 import data from './data.js'
 function App() {
  let productData = data.products.map(el =>{
    debugger
-    return   <div className="row center">
+    return        <div className="row center">
     <div className="card">
       <a href="product.html">
        <img src={el.img} alt="" />
@@ -23,15 +23,15 @@ function App() {
         <div className="price">{el.price}$</div>
       </div>
     </div>
-  </div>
-         
+  </div>   
   })
-  return (
+  return (  
+    <BrowserRouter>   
     <div className="grid-container">
     <header className="center">
       <div><a href="index.html" className="amazona">amazona</a></div>
       <div>
-        <a href="cart.html">Cart</a>
+        <Route to='/cart' render = {()=><div>Tets</div>}></Route>
         <a href="signin.html">Sign in</a>
       </div>
     </header>
@@ -40,7 +40,9 @@ function App() {
     </main>
     <footer className="footer center">All rights reserved</footer>
   </div>
+  </BrowserRouter>   
   );
+  
 }
 
 export default App;
