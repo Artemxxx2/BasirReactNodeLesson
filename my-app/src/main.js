@@ -1,28 +1,32 @@
 import Rating from "./AppMaintainComonent/Rating";
 import data from "./data.js";
+import {Link} from "react-router-dom" 
+import { BrowserRouter, Route } from "react-router-dom";
+import Cart from "./Cart/cartJsComponent";
 
 let Main = (props) =>{
 return (
 <div className ='wrapper'>
-{ data.products.map((el) => {
+ { data.products.map((el) => {
     
     return (
+      
       <div className="row center">
         <div className="card">
-          <a href="product.html">
+          <Link to={'/product/' + el.id} >
             <img src={el.img} alt="" />
-          </a>
+            </Link>
           <div className="card-body">
-            <a href="product.html">
+            <Link to='/product/' ></Link>
               <h2>{el.name}</h2>
-            </a>
+            
             <Rating rating={el.rating} reviews={el.reviews}/>
             <div className="price">{el.price}$</div>
           </div>
         </div>
       </div>
-  
-  )})}
+     
+  )})} 
 </div>
 )}
 export default Main

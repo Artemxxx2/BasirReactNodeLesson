@@ -1,28 +1,34 @@
 import "./App.css";
 import {Link} from "react-router-dom" 
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cart from "./Cart/cartJsComponent";
 import Main from './main'
+import your_name from "./test";
+import Rating from "./AppMaintainComonent/Rating";
+import data from "./data.js";
 function App() {
   
   return (  
-     <div className="grid-container">
+    <BrowserRouter>
+    <div className="grid-container">
     <header className="center">
       <div><a href="index.html" className="amazona">amazona</a></div>
+      <Link to='/cart'>Cart</Link>
+      <Link to= '/test'>Link</Link>
       <div>
         <a href="signin.html">Sign in</a>
       </div>
     </header>
     <main> 
-    <BrowserRouter>
-      <Route  path='/cart' exact component={Cart}></Route>
-     <Link to='/'></Link>
-     <Route  path='/' exact component={Main}></Route>
-  
-  </BrowserRouter>
+    <Switch>
+     <Route  path='/cart' render={()=><Cart></Cart>}></Route>
+     <Route  path='/product/:id' render={()=><your_name></your_name>}></Route>
+     <Route  path='/' render={()=><Main></Main>}></Route>
+     </Switch>
     </main>
     <footer className="footer center">All rights reserved</footer>
-  </div>  
+  </div>
+  </BrowserRouter>  
   );
 }
 
