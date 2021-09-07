@@ -3,11 +3,10 @@ import {Link} from "react-router-dom"
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cart from "./Cart/cartJsComponent";
 import Main from './main'
-import your_name from "./test";
-import Rating from "./AppMaintainComonent/Rating";
+import ProductDetail from "./ProductDetails/ProductDetail";
 import data from "./data.js";
+
 function App() {
-  
   return (  
     <BrowserRouter>
     <div className="grid-container">
@@ -22,7 +21,7 @@ function App() {
     <main> 
     <Switch>
      <Route  path='/cart' render={()=><Cart></Cart>}></Route>
-     <Route  path='/product/:id' render={()=><your_name></your_name>}></Route>
+     <Route  path='/product/:id' render={()=><ProductDetail data={data}></ProductDetail>}></Route>
      <Route  path='/' render={()=><Main></Main>}></Route>
      </Switch>
     </main>

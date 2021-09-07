@@ -1,8 +1,6 @@
 import Rating from "./AppMaintainComonent/Rating";
 import data from "./data.js";
 import {Link} from "react-router-dom" 
-import { BrowserRouter, Route } from "react-router-dom";
-import Cart from "./Cart/cartJsComponent";
 
 let Main = (props) =>{
 return (

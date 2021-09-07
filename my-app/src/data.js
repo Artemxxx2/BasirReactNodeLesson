@@ -6,7 +6,8 @@ const data = {
       name: "Nike Slim Shirts",
       img: null,
       rating: 3,
-      reviews:1
+      reviews:1,
+      description:'high quality product'
     },
     {
       id: 2,
@@ -42,6 +43,5 @@ const data = {
     },
   ],
 };
-let test;
 
 export default data;
