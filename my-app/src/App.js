@@ -2,10 +2,8 @@ import "./App.css";
 import {Link} from "react-router-dom" 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cart from "./Cart/cartJsComponent";
-import Main from './main'
-import ProductDetail from "./ProductDetails/ProductDetail";
 import MainContainer from "./mainjsContainer";
-
+import ProductDetail from './ProductDetails/ProductDetail'
 function App() {
   return (  
     <BrowserRouter>
@@ -21,7 +19,7 @@ function App() {
     <main> 
     <Switch>
      <Route  path='/cart' render={()=><Cart></Cart>}></Route>
-     {/* <Route  path='/product/:id' render={()=><ProductDetail data={data}></ProductDetail>}></Route> */}
+     <Route  path='/product/:id' render={()=><ProductDetail></ProductDetail>}></Route>
      <Route  path='/' render={()=><MainContainer></MainContainer>}></Route>
      </Switch>
     </main>

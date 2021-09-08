@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
+import DetailReduser from "./Reducers/DetailReduser";
 import reduser from "./Reducers/mainReduser";
 
 const initialState = {
@@ -7,7 +8,8 @@ const initialState = {
     loading:true
 };
 let redusers = combineReducers({
-    mainReduser:reduser
+    mainReduser:reduser,
+    DetailReduser:DetailReduser
 })
 const composeEnhancers =
   (typeof window !== "undefined" &&

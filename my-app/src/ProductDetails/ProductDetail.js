@@ -1,24 +1,29 @@
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { withRouter } from "react-router";
+import { productDetails } from "../actions/actionCreators";
+import ErrorComponent from "../ErrorComponent";
+import LoadComponent from "../LoadComponent";
+
 import  './ProductDetail.css'
 let ProductDetail = (props) => {
-  let URL = Number(props.match.params.id)
-  
- const AllocatedProductData =  props.data.products.filter(el=> el.id === URL)
+  let URL = Number(props.match.params.id) 
+  let dispatch = useDispatch();
+  let el = useSelector(state=> state.DetailReduser)
+  const {loading,error,data} = el
+  useEffect(()=>{
+    dispatch(productDetails(URL))
+  }, [dispatch])
+  console.log(el);
+
   return (
     <div>  
-        {
-          AllocatedProductData.map(el => {
-            return<div className='wrapper'>
-            <div >{el.img}</div>
-            <div className='RightSide'>
-              <li>{el.name}</li>
-              <li>{el.description}</li>
-              <li>{el.price}</li>
-            </div>
-            </div>
-          }
-          )
-        }
+       {
+          loading ? (<LoadComponent></LoadComponent>):
+            error ? (<ErrorComponent error = {error}></ErrorComponent>):
+            <div>Hello world!</div>
+       }
  
     </div>
   );

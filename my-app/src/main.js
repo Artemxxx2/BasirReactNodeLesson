@@ -2,16 +2,15 @@ import {Link} from "react-router-dom"
 import { useEffect } from "react";
 import LoadComponent from "./LoadComponent";
 import ErrorComponent from "./ErrorComponent";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { listProducts } from "./actions/actionCreators";
 
-let Main = () =>{
-  const dispatch = useDispatch()
-  const productList = useSelector(state=> state.mainReduser)
-  const {loading,error,products} = productList
+let Main = (props) =>{
+  const dispatcher = useDispatch()
+  const {loading,error,products} = props.productList
     useEffect(()=>{  
-      dispatch(listProducts())
-    }, [dispatch])
+      dispatcher(listProducts())
+    }, [dispatcher])
     
 return (
 <div className ='wrapper'>
