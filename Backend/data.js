@@ -41,6 +41,7 @@ const data = {
       rating: 5,
       reviews:32
     },
+    
   ],
 };
 

@@ -1,0 +1,22 @@
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
+import thunk from "redux-thunk";
+import reduser from "./Reducers/mainReduser";
+
+const initialState = {
+  products:[],
+    loading:true
+};
+let redusers = combineReducers({
+    mainReduser:reduser
+})
+const composeEnhancers =
+  (typeof window !== "undefined" &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
+let store = createStore(
+    redusers,
+    initialState,
+  composeEnhancers(applyMiddleware(thunk))
+);
+console.log(store.getState());
+export default store;

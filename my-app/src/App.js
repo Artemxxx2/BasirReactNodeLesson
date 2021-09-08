@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cart from "./Cart/cartJsComponent";
 import Main from './main'
 import ProductDetail from "./ProductDetails/ProductDetail";
-import data from "./data.js";
+import MainContainer from "./mainjsContainer";
 
 function App() {
   return (  
@@ -21,8 +21,8 @@ function App() {
     <main> 
     <Switch>
      <Route  path='/cart' render={()=><Cart></Cart>}></Route>
-     <Route  path='/product/:id' render={()=><ProductDetail data={data}></ProductDetail>}></Route>
-     <Route  path='/' render={()=><Main></Main>}></Route>
+     {/* <Route  path='/product/:id' render={()=><ProductDetail data={data}></ProductDetail>}></Route> */}
+     <Route  path='/' render={()=><MainContainer></MainContainer>}></Route>
      </Switch>
     </main>
     <footer className="footer center">All rights reserved</footer>
