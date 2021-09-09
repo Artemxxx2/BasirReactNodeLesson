@@ -3,7 +3,6 @@ import {Link} from "react-router-dom"
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cart from "./Cart/cartJsComponent";
 import MainContainer from "./mainjsContainer";
-import ProductDetail from './ProductDetails/ProductDetail'
 import ProductDetailContainer from "./ProductDetailContainer";
 function App() {
   return (  

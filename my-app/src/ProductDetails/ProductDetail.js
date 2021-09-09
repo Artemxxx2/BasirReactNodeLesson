@@ -5,6 +5,7 @@ import Productdetaildata from "../Productdetaildata";
 
 import  './ProductDetail.css'
 let ProductDetail = (props) => {
+  
   let URL = Number(props.match.params.id) 
   let el =  props.DetailReduser
   const {loading,error,product} = el
