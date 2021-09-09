@@ -6,9 +6,9 @@ return{
     productList:state.mainReduser
 }
 }
-let MapDispatchtoProps =(dispatch)=>{
-    
-}
 
-let MainContainer = connect(MapStateToProps,MapDispatchtoProps)(Main)
+
+let MainContainer = connect(MapStateToProps,{
+    listProducts
+})(Main)
 export default MainContainer

@@ -1,8 +1,4 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { withRouter } from "react-router";
-import { productDetails } from "../actions/actionCreators";
 import ErrorComponent from "../ErrorComponent";
 import LoadComponent from "../LoadComponent";
 import Productdetaildata from "../Productdetaildata";
@@ -10,13 +6,11 @@ import Productdetaildata from "../Productdetaildata";
 import  './ProductDetail.css'
 let ProductDetail = (props) => {
   let URL = Number(props.match.params.id) 
-  let dispatch = useDispatch();
-  let el = useSelector(state=> state.DetailReduser)
+  let el =  props.DetailReduser
   const {loading,error,product} = el
   useEffect(()=>{
-    dispatch(productDetails(URL))
-  }, [dispatch])
-  console.log(el);
+    props.productDetails(URL)
+  }, [props.productDetails])
 
   return (
     <div>  
@@ -30,5 +24,5 @@ let ProductDetail = (props) => {
   );
 };
 
-let ProductDetailWithURL = withRouter(ProductDetail)
-export default ProductDetailWithURL;
+
+export default ProductDetail;

@@ -2,18 +2,17 @@ import {Link} from "react-router-dom"
 import { useEffect } from "react";
 import LoadComponent from "./LoadComponent";
 import ErrorComponent from "./ErrorComponent";
-import { useDispatch } from "react-redux";
 import { listProducts } from "./actions/actionCreators";
+import maincss from './main.module.css'
 
 let Main = (props) =>{
-  const dispatcher = useDispatch()
   const {loading,error,products} = props.productList
     useEffect(()=>{  
-      dispatcher(listProducts())
-    }, [dispatcher])
+      props.listProducts()
+    }, [listProducts])
     
 return (
-<div className ='wrapper'>
+<div className ={maincss.wrapper}>
 
   {loading ? (<LoadComponent></LoadComponent>):
   error ? (<ErrorComponent error = {error}></ErrorComponent>):
@@ -21,7 +20,7 @@ return (
     
     return (
       
-      <div className="row center">
+      <div className={maincss.gridobject}>
         <div className="card">
           <Link to={'/product/' + el.id} >
             <img src={el.img} alt="" />

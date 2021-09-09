@@ -1,7 +1,7 @@
 import  express  from "express";
 import data from "./data.js";
 const app = express()
-app.get('/product/api/products/:id', (req,res)=>{
+app.get('/api/product/:id', (req,res)=>{
     let URL=Number(req.params.id)
     const product = data.products.find(el=>el.id === URL)
     if (product) {

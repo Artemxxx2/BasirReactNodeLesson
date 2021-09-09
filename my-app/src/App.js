@@ -4,25 +4,26 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cart from "./Cart/cartJsComponent";
 import MainContainer from "./mainjsContainer";
 import ProductDetail from './ProductDetails/ProductDetail'
+import ProductDetailContainer from "./ProductDetailContainer";
 function App() {
   return (  
     <BrowserRouter>
     <div className="grid-container">
     <header className="center">
-      <div><a href="index.html" className="amazona">amazona</a></div>
+      <div><Link to='/' className="amazona">amazona</Link></div>
       <Link to='/cart'>Cart</Link>
       <Link to= '/test'>Link</Link>
       <div>
         <a href="signin.html">Sign in</a>
       </div>
     </header>
-    <main> 
+    {/* <main>  */}
     <Switch>
      <Route  path='/cart' render={()=><Cart></Cart>}></Route>
-     <Route  path='/product/:id' render={()=><ProductDetail></ProductDetail>}></Route>
+     <Route  path='/product/:id' render={()=><ProductDetailContainer></ProductDetailContainer>}></Route>
      <Route  path='/' render={()=><MainContainer></MainContainer>}></Route>
      </Switch>
-    </main>
+    {/* </main> */}
     <footer className="footer center">All rights reserved</footer>
   </div>
   </BrowserRouter>  

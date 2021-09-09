@@ -15,11 +15,12 @@ export const  listProducts = () =>async(dispatch)=>{
 }
 
 export const productDetails = (id) =>async(dispatch)=>{
+    
     dispatch({
         type:PRODUCTDETAILSTREQUEST
     })
     try{
-        const {data} = await axios.get(`api/products/${id}`)
+        const {data} = await axios.get(`/api/product/${id}`)
         
         dispatch({type:PRODUCTDETAILSTSUCCESS,payload:data})
     }

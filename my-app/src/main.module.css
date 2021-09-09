@@ -1,0 +1,9 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.gridobject{
+    margin: 10px 0px 30px;
+ width: 600px;
+ display: inline-block;
+}
