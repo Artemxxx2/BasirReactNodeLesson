@@ -20,7 +20,7 @@ export const productDetails = (id) =>async(dispatch)=>{
     })
     try{
         const {data} = await axios.get(`api/products/${id}`)
-        debugger
+        
         dispatch({type:PRODUCTDETAILSTSUCCESS,payload:data})
     }
     catch(error){

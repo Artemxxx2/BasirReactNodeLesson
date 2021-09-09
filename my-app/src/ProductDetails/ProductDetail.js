@@ -5,13 +5,14 @@ import { withRouter } from "react-router";
 import { productDetails } from "../actions/actionCreators";
 import ErrorComponent from "../ErrorComponent";
 import LoadComponent from "../LoadComponent";
+import Productdetaildata from "../Productdetaildata";
 
 import  './ProductDetail.css'
 let ProductDetail = (props) => {
   let URL = Number(props.match.params.id) 
   let dispatch = useDispatch();
   let el = useSelector(state=> state.DetailReduser)
-  const {loading,error,data} = el
+  const {loading,error,product} = el
   useEffect(()=>{
     dispatch(productDetails(URL))
   }, [dispatch])
@@ -22,7 +23,7 @@ let ProductDetail = (props) => {
        {
           loading ? (<LoadComponent></LoadComponent>):
             error ? (<ErrorComponent error = {error}></ErrorComponent>):
-            <div>Hello world!</div>
+            (<Productdetaildata product={product} ></Productdetaildata>)
        }
  
     </div>
