@@ -1,11 +1,9 @@
 import productDetailsCss from "./productDetailsCss.module.css";
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 let Productdetaildata = (props) => {
   const { id, price, description, img, name, rating, reviews, countInStock  } = props.product;
   const [qty,setQTY] = useState(1)
-  let dispatch = useDispatch()
   let state = useSelector(state => state)
   console.log(state, props);
   const addEventHandler = () =>{
