@@ -18,7 +18,7 @@ let ProductDetail = (props) => {
        {
           loading ? (<LoadComponent></LoadComponent>):
             error ? (<ErrorComponent error = {error}></ErrorComponent>):
-            (<Productdetaildata product={product} ></Productdetaildata>)
+            (<Productdetaildata history = {props.history} product={product} ></Productdetaildata>)
        }
  
     </div>

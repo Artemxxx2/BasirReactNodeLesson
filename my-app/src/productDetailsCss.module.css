@@ -22,6 +22,7 @@
     transform: scale(1.2);
     overflow: hidden;
 }
+
 .imgwrapper{
     margin-left: 30px;
     height: 600px;
@@ -47,37 +48,58 @@ margin-top: 60px;
     font-weight: bold;
 }
 .orderbox {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 .orderboxfinal{
 margin-top:50px;
 border:1px solid black;
 display: grid;
 grid-template-areas: 'top'
+'middle'
 'bottom';
-grid-template-rows: 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr;
 height: 300px;
 width: 400px;
+}
+.thirdBlock{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
 }
 .orderbox{
 grid-area: top;
 }
 .btn{
-grid-area: bottom;
+grid-area: middle;
 display: flex;
 justify-content: center;
 align-items: center;
 }
 
-.btn button{
+.btn a{
     padding: 30px;
     color: blue;
     background-color: coral;
+    box-shadow:4px 4px 4px black;
+}
+.btn a:hover{
+    transition-timing-function: linear;
+    transition-duration: 1s;
+    color:green;
+    box-shadow:none
 }
 .firstBlock{
     display: flex;
+    justify-content: space-between;
+}
+.firstBlock div{
+    margin: 10px;
 }
 .secondBlock{
     display: flex;
+    justify-content: space-between;
+}
+.secondBlock{
+    margin: 10px;
 }

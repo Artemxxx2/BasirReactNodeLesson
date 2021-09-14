@@ -1,9 +1,10 @@
 import "./App.css";
 import {Link} from "react-router-dom" 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Cart from "./Cart/cartJsComponent";
 import MainContainer from "./mainjsContainer";
 import ProductDetailContainer from "./ProductDetailContainer";
+import CartScreen from "./CartScreen";
+import CartScreenContainer from "./CartScrennContainer";
 function App() {
   return (  
     <BrowserRouter>
@@ -18,7 +19,7 @@ function App() {
     </header>
     {/* <main>  */}
     <Switch>
-     <Route  path='/cart' render={()=><Cart></Cart>}></Route>
+     <Route  path='/cart/:id?' render={()=><CartScreenContainer></CartScreenContainer>}></Route>
      <Route  path='/product/:id' render={()=><ProductDetailContainer></ProductDetailContainer>}></Route>
      <Route  path='/' render={()=><MainContainer></MainContainer>}></Route>
      </Switch>
