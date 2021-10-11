@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types';
 import { useEffect } from "react";
 import ErrorComponent from "../ErrorComponent";
 import LoadComponent from "../LoadComponent";
 import Productdetaildata from "../Productdetaildata";
-
 import  './ProductDetail.css'
+
 let ProductDetail = (props) => {
-  
   let URL = Number(props.match.params.id) 
   let el =  props.DetailReduser
   const {loading,error,product} = el
@@ -25,5 +25,9 @@ let ProductDetail = (props) => {
   );
 };
 
+ProductDetail.propTypes = 
+{
+  loading:PropTypes.bool,
+}
 
 export default ProductDetail;

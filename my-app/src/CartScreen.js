@@ -1,11 +1,11 @@
+import "./App.css";
 let CartScreen = (props) =>{
-    debugger
     const productId = props.match.params.id;
     const qty =props.location.search?Number(props.location.search.split('=')[1]):1
 return (
-<div className ='wrapper'>
+<main className='wrapper'>
     <h1>CartScreen</h1>
     <p>Add to Cart:ProductID:{productId}, qty = {qty}</p>
-</div>
+</main>
 )}
 export default CartScreen

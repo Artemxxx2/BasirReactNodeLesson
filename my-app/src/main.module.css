@@ -3,7 +3,35 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 .gridobject{
-    margin: 10px 0px 30px;
+ margin: 10px 0px 30px;
  width: 600px;
  display: inline-block;
+}
+@media screen and (max-width: 1800px) {
+    .wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    }
+    .gridobject{
+        margin: 10px 0px 30px;
+        width: 300px;
+        display:inline-block;
+    }
+    img{
+        width: 260px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    }
+    .gridobject{
+        margin: 10px 0px 30px;
+        width: 300px;
+        display:inline-block;
+    }
+    img{
+        width: 260px;
+    }
 }
