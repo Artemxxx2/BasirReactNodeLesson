@@ -9,10 +9,9 @@ let Productdetaildata = (props) => {
   const addEventHandler = () =>{
     props.history.push(`/cart/${id}?qty=${qty}`)
   }
-  // useEffect =(() =>{
 
-  // },[])
   return (
+    <div className={productDetailsCss.mainwrapper}>
     <div className={productDetailsCss.wrapper}>
       <div className={productDetailsCss.imgwrapper}>
         <img className={productDetailsCss.img} src={img} alt="shoes" />{" "}
@@ -28,6 +27,7 @@ let Productdetaildata = (props) => {
           <li>{description}</li>
         </ul>
       </div>
+      <div className={productDetailsCss.orderboxwrapper}>
       <div className={productDetailsCss.orderboxfinal}>
       <div className={productDetailsCss.orderbox}>
         <div className={productDetailsCss.firstBlock}>
@@ -44,7 +44,8 @@ let Productdetaildata = (props) => {
            countInStock > 0 ?
            <div className={productDetailsCss.row}>
              <div className={productDetailsCss.QTY}>
-              <select value={qty} onChange={e=>{
+              <select value={qty} 
+              onChange={e=>{
                 setQTY(e.target.value)
               }}>
                 {
@@ -71,6 +72,8 @@ let Productdetaildata = (props) => {
         }
         </div>
       </div>
+    </div>
+    </div>
     </div>
   );
 };

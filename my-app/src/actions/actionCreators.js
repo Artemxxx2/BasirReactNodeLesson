@@ -1,5 +1,5 @@
 import axios from "axios"
-import { PRODUCTDETAILSTFAIL, PRODUCTDETAILSTREQUEST, PRODUCTDETAILSTSUCCESS, PRODUCTLISTFAIL, PRODUCTLISTREQUEST, PRODUCTLISTSUCCESS } from "../constants/productConstants"
+import { PRODUCTDETAILSTFAIL, PRODUCTDETAILSTREQUEST, PRODUCTDETAILSTSUCCESS, PRODUCTLISTFAIL, PRODUCTLISTREQUEST, PRODUCTLISTSUCCESS,CART_ADD_ITEM } from "../constants/productConstants"
 
 export const  listProducts = () =>async(dispatch)=>{
     dispatch({
@@ -27,4 +27,22 @@ export const productDetails = (id) =>async(dispatch)=>{
     catch(error){
         dispatch({type:PRODUCTDETAILSTFAIL,error:error.message})
     }
+}
+
+export const addToCart = (productid,qty) =>async(dispatch,getState)=>{
+    let {data} = await axios.get(`/api/product/${productid}`)
+    dispatch(
+        {type:CART_ADD_ITEM,
+        payload:{
+            name:data.name,
+            img:data.img,
+            price:data.price,
+            countInStock:data.countInStock,
+            product:data.id,
+            qty:qty
+        }
+        }
+    )
+    localStorage.setItem('cartitems',JSON.stringify(getState().cart.cartItems))
+    
 }

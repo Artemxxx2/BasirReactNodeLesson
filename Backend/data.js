@@ -1,4 +1,6 @@
+import bcrypt from 'bcrypt'
 const data = {
+
   products: [
     {
       id: 1,
